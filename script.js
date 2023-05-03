@@ -1,12 +1,8 @@
-function decimalToBinary(num){
-    let binaryStr = ""
-    while(num>0){
-        let rem = num%2;
-        binaryStr = binaryStr + rem.toString()
- 
-        num = Math.floor(num/2)
-    }
-  
- return parseInt(binaryStr.split("").reverse().join(""))
- 
-module.exports = decimalToBinary;
+const decimalToBinary = (num) => {
+  let binaryStr = num.toString(2);
+  return binaryStr;
+};
+
+const num = parseInt(process.argv[2]);
+const binaryStr = decimalToBinary(num);
+console.log(binaryStr);
