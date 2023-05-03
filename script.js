@@ -1,16 +1,20 @@
-function binary(){
-	let val = document.getElementById("decimalNumber").value;
+function decimalToBinary(decimalNumber) {
+  // initialize variables
+  let binaryNumber = "";
+  let quotient = decimalNumber;
 
-	let binarynumber="";
+  // perform division until quotient is zero
+  while (quotient !== 0) {
+    // calculate remainder
+    let remainder = quotient % 2;
 
-	while(val>0){
-		var remainder = val%2;
-		binarynumber = remainder + binarynumber;
-		val = Math.floor(val/2);
-	}
+    // add remainder to binary number
+    binaryNumber = remainder.toString() + binaryNumber;
 
-	console.log(binarynumber);
+    // divide quotient by 2
+    quotient = Math.floor(quotient / 2);
+  }
+
+  // return binary number as a string
+  return binaryNumber;
 }
-
-
-module.exports = threeSum;
